@@ -1,14 +1,25 @@
-// * Programming Quiz: Donuts Revisited (7-6)
+/*
+ * Programming Quiz: Bank Accounts 1 (7-3)
+ */
 
+var savingsAccount = {
+   balance: 1000,
+   interestRatePercent: 1,
+   deposit: function addMoney(amount) {
+       if (amount > 0) {
+           savingsAccount.balance += amount;
+       }
+   },
+   withdraw: function removeMoney(amount) {
+       var verifyBalance = savingsAccount.balance - amount;
+       if (amount > 0 && verifyBalance >= 0) {
+           savingsAccount.balance -= amount;
+       }
+   },
+   printAccountSummary : function (){
+       return (`Welcome!
+Your balance is currently $1000 and your interest rate is 1%.`);
+   }
+};
 
-var donuts = [
-   { type: "Jelly", cost: 1.22 },
-   { type: "Chocolate", cost: 2.45 },
-   { type: "Cider", cost: 1.59 },
-   { type: "Boston Cream", cost: 5.99 }
-];
-
-donuts.forEach(donut =>{
-   console.log(`${donut.type} donuts cost $${donut.cost} each`);
-});
-
+console.log(savingsAccount.printAccountSummary());
