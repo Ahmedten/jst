@@ -1,14 +1,27 @@
-// * Programming Quiz: Donuts Revisited (7-6)
+/*
+ * Programming Quiz: Umbrella (7-1)
+ */
 
+var umbrella = {
+   color: "pink",
+   isOpen: true,
+   open: ()=> {
+       if (umbrella.isOpen === true) {
+           return "The umbrella is already opened!";
+       } else {
+           umbrella.isOpen = true;
+           return "Julia opens the umbrella!";
+       }
+   },
+   close :()=>{
+       if (umbrella.isOpen ===true){
+           umbrella.isOpen = false;
+           return "Julia closes the umbrella"
+       }else{
+           return "the umbrella is already closed"
+       }
+   }
+};
 
-var donuts = [
-   { type: "Jelly", cost: 1.22 },
-   { type: "Chocolate", cost: 2.45 },
-   { type: "Cider", cost: 1.59 },
-   { type: "Boston Cream", cost: 5.99 }
-];
-
-donuts.forEach(donut =>{
-   console.log(`${donut.type} donuts cost $${donut.cost} each`);
-});
-
+console.log(umbrella.close());
+console.log(umbrella.isOpen);
