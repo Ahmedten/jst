@@ -1,14 +1,31 @@
-// * Programming Quiz: Donuts Revisited (7-6)
+/*
+Use the rest parameter to create an average() function that calculates the average of an unlimited amount of numbers.
 
+TIP: Make sure to test your code with different values. For example,
 
-var donuts = [
-   { type: "Jelly", cost: 1.22 },
-   { type: "Chocolate", cost: 2.45 },
-   { type: "Cider", cost: 1.59 },
-   { type: "Boston Cream", cost: 5.99 }
-];
+average(2, 6) should return 4
+average(2, 3, 3, 5, 7, 10) should return 5
+average(7, 1432, 12, 13, 100) should return 312.8
+average() should return 0
+ * Programming Quiz: Using the Rest Parameter (1-5)
+ */
 
-donuts.forEach(donut =>{
-   console.log(`${donut.type} donuts cost $${donut.cost} each`);
-});
+// your code goes here
 
+function average(...nums) {
+    const count = nums.length;
+    if (count !==0){
+    let total = 0;
+    for (let num of nums){
+        total +=num;
+    }
+        return total/count;
+    }else {
+        return 0;
+    }
+}
+
+console.log(average(2, 6));
+console.log(average(2, 3, 3, 5, 7, 10));
+console.log(average(7, 1432, 12, 13, 100));
+console.log(average());
