@@ -25,7 +25,73 @@ function average(...nums) {
     }
 }
 
-console.log(average(2, 6));
-console.log(average(2, 3, 3, 5, 7, 10));
-console.log(average(7, 1432, 12, 13, 100));
-console.log(average());
+// console.log(average(2, 6));
+// console.log(average(2, 3, 3, 5, 7, 10));
+// console.log(average(7, 1432, 12, 13, 100));
+// console.log(average());
+
+// function video (){
+//     console.log(this.average);
+// }
+
+// video();
+
+
+
+/////////////////////////////////////////////////////////////
+
+// constructor
+function IceCream() {
+    this.scoops = 0;
+    //  console.log(this);
+  }
+  
+  // adds scoop to ice cream
+  IceCream.prototype.addScoop = function() {
+    setTimeout(function() {
+      this.scoops++;
+    //   console.log('scoop added!'+this);
+    }, 500);
+  };
+  
+  const dessert = new IceCream();
+//   dessert.addScoop();
+///////////////////////////////////////////////////////////////////////////////
+
+  function greeting( [name = "Ahmed",greet = "Welcome"]=[]){
+      console.log(`${greet} ${name}! `);
+  }
+// greeting();
+//////////////////////////////////////////////////////////////////////////////
+function houseDescriptor([houseColor = 'green', shutterColors = ['red']]) {
+    return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
+  }
+
+
+//   console.log(houseDescriptor(["Red",["blue","green"]]));
+
+  /////////////////////////////////////////////////////////////////////////////
+
+  function createSundae({scoops = 1, toppings = ['Hot Fudge']}={}) {
+    const scoopText = scoops === 1 ? 'scoop' : 'scoops';
+    return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+  }
+  
+//   console.log(createSundae());
+//   console.log(createSundae({})); // Your sundae has 1 scoop with Hot Fudge toppings.
+//   console.log(createSundae({scoops: 5})); // Your sundae has 2 scoops with Hot Fudge toppings.
+//   console.log(createSundae({scoops: 2, toppings: ['Sprinkles']})); // Your sundae has 2 scoops with Sprinkles toppings.
+//   console.log(createSundae({toppings: ['Cookie Dough',"Choclate"]})); // Your sundae has 1 scoop with Cookie Dough toppings.
+
+
+  /////////////////////////////////////////////////////////////////////////////////////////
+
+  function houseDescriptor({houseColor = 'green', shutterColors = ['red']} = {}) {
+    return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
+  }
+
+  console.log(houseDescriptor());
+  console.log(houseDescriptor({houseColor :"Blue",shutterColors:["white","Danger"]}));
+  
+
+
